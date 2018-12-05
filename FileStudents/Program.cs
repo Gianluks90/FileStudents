@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
+// Per migliorare il programma è più corretto creare più classi anziché utilizzare variabili e metodi statici; Una classe per la lettura da file
+// una per l'ottenimento dell'input, ecc...
+
 namespace FileStudents
 {
     class Program
     {
-        const int ALIGNMENT = -15;
-        void Main(string[] args)
+        const int ALIGNMENT = -15;          // Questa costante determinerà il numero di caratteri nella tabella stampata;
+        static void Main(string[] args)
         {
             string line;
 
@@ -19,8 +22,8 @@ namespace FileStudents
                 Student newStudent = new Student(studentInfos[0], studentInfos[1], studentInfos[2], studentInfos[3], studentInfos[4], studentInfos[5]);
                 students.Add(newStudent);
             }
-
             string input;
+
             while(true)
             {
                 Console.WriteLine("Press L to see the students list");
@@ -60,7 +63,7 @@ namespace FileStudents
             }
         }
 
-        private void PrintList(List<Student> students)
+        public static void PrintList(List<Student> students)
         {
             Console.WriteLine($"{"ID",ALIGNMENT}{"NAME", ALIGNMENT}{"SURNAME", ALIGNMENT}{"AGE", ALIGNMENT}{"GENDER", ALIGNMENT}{"MARK", ALIGNMENT}\n");
             foreach (var item in students)
@@ -70,7 +73,7 @@ namespace FileStudents
             Console.WriteLine();
         }
 
-        private void SearchByID(List<Student> students)
+        public static void SearchByID(List<Student> students)
         {
             Console.WriteLine("Insert ID to search: ");
             int id = int.Parse(Console.ReadLine());
@@ -85,7 +88,7 @@ namespace FileStudents
             Console.WriteLine("ID is not in th list of students.");
         }
 
-        private void AverageMark(List<Student> students)
+        public static void AverageMark(List<Student> students)
         {
             float sum = 0;
             int count = 0;
@@ -98,7 +101,7 @@ namespace FileStudents
             Console.WriteLine($"The average mark is: {Math.Round(sum / count,2)}");
         }
 
-        private void ModeMark(List<Student> students)
+        public static void ModeMark(List<Student> students)
         {
             int count = 1, modeCount = 0, index = 0;
             for (int i = 0; i < students.Count - 1; i++)
@@ -120,7 +123,7 @@ namespace FileStudents
             Console.WriteLine($"The mode mark is {students[index].mark}: {modeCount} times.");
         }
 
-        private void MedianMark(List<Student> students)
+        public static void MedianMark(List<Student> students)
         {
             float[] marks = new float[students.Count];
             for (int i = 0; i < students.Count; i++)
@@ -140,7 +143,7 @@ namespace FileStudents
             }
         }
 
-        public void InsertionSort(float[] array)
+        public static void InsertionSort(float[] array)
         {
             for (int i = 1; i < array.Length; i++)
             {
@@ -155,7 +158,7 @@ namespace FileStudents
             }
         }
 
-        public void MaleFemaleMarks(List<Student> students)
+        public static void MaleFemaleMarks(List<Student> students)
         {
             int minMaleMark = 11, maxFemaleMark = 0;
 
@@ -185,7 +188,7 @@ namespace FileStudents
             }
         }
 
-        public void AdultUnderageMode(List<Student> students)
+        public static void AdultUnderageMode(List<Student> students)
         {
             int adultCount = 1, underageCount = 1, adultModeCount = 0, underageModeCount = 0, adultIndex = 0, underageIndex = 0;
             const int MAJORITY = 18;
