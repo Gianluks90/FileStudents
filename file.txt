@@ -1,0 +1,8 @@
+1,Mario,Rossi,20,M,7
+2,Roberto,Verdi,17,M,6
+17,Luca,Bertoldi,28,M,1
+7,Alessia,Pignatta,20,F,5
+22,Ambra,Rosetta,15,F,9
+4,Giorgio,Armadi,16,M,5
+28,Addolorata,Concezione,25,F,4
+54,Maruko,Bayashi,26,F,4
