@@ -12,13 +12,14 @@ namespace FileStudents
         static void Main(string[] args)
         {
             string line;
+            string[] studentInfos;
 
             List<Student> students = new List<Student>();
             var file = new System.IO.StreamReader(@"C:\Users\Allievo 7\Documents\Gianluca Marino\FileStudents\file.txt");
 
             while ((line = file.ReadLine()) != null)
             {
-                string[] studentInfos = line.Split(',');
+                studentInfos = line.Split(',');
                 Student newStudent = new Student(studentInfos[0], studentInfos[1], studentInfos[2], studentInfos[3], studentInfos[4], studentInfos[5]);
                 students.Add(newStudent);
             }
